@@ -1,7 +1,6 @@
 {
   "name": "mern-pizza",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +9,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.3"
-  }
+    "express": "^4.17.3",
+    "mongoose": "^6.2.10",
+    "nodemon": "^2.0.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdev1356/mern-pizza.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sdev1356/mern-pizza/issues"
+  },
+  "homepage": "https://github.com/sdev1356/mern-pizza#readme",
+  "description": ""
 }
