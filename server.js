@@ -4,22 +4,14 @@ const Pizza=require('./models/pizzaModel')
 
 const db=require('./db')
 
+const pizzasRoute=require('./routes/pizzasRoute')
+
 app.get('/',(req,res)=>{
     res.send("Server started");
 })
 
-app.get('/getpizzas',(req,res)=>{
 
-    Pizza.find({},(err,docs)=>{
-        if(err){
-            console.log(err);
-        } else
-        {
-            res.send(docs);
-        }
-    })
-
-})
+app.use('/api/pizzas/',pizzasRoute)
 
 const port=process.env.PORT||8000;
 app.listen(port,()=>

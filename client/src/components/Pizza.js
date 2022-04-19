@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { Modal, Button } from 'react-bootstrap'
+import { useSelector, useDispatch } from 'react-redux'
+import { addToCart } from '../actions/cartActions'
+
 export default function Pizza({ pizza }) {
     const [quantity, setquantity] = useState(1);
     const [varient, setvarient] = useState('small');
@@ -7,10 +10,13 @@ export default function Pizza({ pizza }) {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
+    const dispatch = useDispatch()
+    function addtoCart() {
+        dispatch(addToCart(pizza, quantity, varient))
+    }
 
     return (
-        <div style={{ margin: '70px' }} className="shadow p-3 mb-5 bg-white rounded">
+        <div style={{}} className="shadow p-3 mb-5 bg-white rounded">
             <div className="container" onClick={handleShow}>
                 <h1>{pizza.name}</h1>
                 <img src={pizza.image} className="img-fluid" style={{ height: '200px', width: '200px' }} />
@@ -38,19 +44,19 @@ export default function Pizza({ pizza }) {
                     <h1 className="mt-1">Price:{pizza.prices[0][varient] * quantity} Rs/-</h1>
                 </div>
                 <div className="m-1 w-100">
-                    <button className="btn ">Add To Cart</button>
+                    <button className="btn " onClick={addtoCart}>Add To Cart</button>
                 </div>
             </div>
 
-           
+
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>{pizza.name}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                <img src={pizza.image} className="img-fluid" style={{height:'300px!important'}}/>
-                <p>{pizza.description}</p>
+                    <img src={pizza.image} className="img-fluid" style={{ height: '300px!important' }} />
+                    <p>{pizza.description}</p>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
