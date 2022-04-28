@@ -12,6 +12,8 @@ import {
   Routes
 } from "react-router-dom";
 import CartScreen from './screens/CartScreen';
+import Registerscreen from './screens/Registerscreen'
+import Loginscreen from './screens/Loginscreen';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
     <Routes>
       <Route exact path="/" element={<Homescreen/>}/>
      <Route exact path='/cart'  element={<CartScreen/>}/>
+     <Route exact path="/register" element={<Registerscreen/>}/>
+      <Route exact path="/login" element={<Loginscreen/>}/>
     </Routes>
     </BrowserRouter>
    

@@ -5,7 +5,7 @@ import {
     useNavigate
    } from "react-router-dom";
   import Test from './Test'
-   
+  
 function Navbar() {
     const navigate=useNavigate
     const handleClick=()=>{
@@ -23,7 +23,7 @@ function Navbar() {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
-                                <a className="nav-link " aria-current="page" href="#">Login</a>
+                                <a className="nav-link " aria-current="page" href="/register">Login</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/cart"><FaShoppingCart/>
