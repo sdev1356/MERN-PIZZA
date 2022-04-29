@@ -48,7 +48,11 @@ export default function Registerscreen() {
                         value={cpassword}
                         onChange={(e) => { setcpassword(e.target.value) }}
                         />
-                        <button className="btn btn-danger mt-2 " onClick={register}>Register</button>
+                        <button className="btn btn-danger mt-2 " onClick={register}>Register</button><br/>
+                        <button className="btn btn-danger mt-2 ">
+                        <a href= '/login'style={{textDecoration: 'none',color:'white'}}><div>Login</div></a>
+                        
+                        </button>
                     </div>
 
                 </div>
