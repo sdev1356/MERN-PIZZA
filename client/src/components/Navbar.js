@@ -36,6 +36,7 @@ function logout(){
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 
                   <a class="dropdown-item" onClick={logout}>Logout</a>
+                  <a class="dropdown-item" href='/final'>My orders</a>
                 
                 </div>
               </div>

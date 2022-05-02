@@ -14,6 +14,9 @@ import {
 import CartScreen from './screens/CartScreen';
 import Registerscreen from './screens/Registerscreen'
 import Loginscreen from './screens/Loginscreen';
+import FinalScreen from './screens/FinalScreen'
+import Address from './screens/Address'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -26,9 +29,11 @@ function App() {
      <Route exact path='/cart'  element={<CartScreen/>}/>
      <Route exact path="/register" element={<Registerscreen/>}/>
       <Route exact path="/login" element={<Loginscreen/>}/>
+      <Route exact path='/final' element={<FinalScreen/>}/>
+      <Route exact path='/address' element={<Address/>}/>
     </Routes>
     </BrowserRouter>
-   
+   <Footer/>
      
      </div>
     </div>

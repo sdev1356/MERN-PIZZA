@@ -14,17 +14,26 @@ router.post('/register',async(req,res)=>{
     }
 
 });
-router.post('/login',async(req,res)=>{
-    const {name,email,password} = req.body
-    try{
-        const user=await User.find({email,password})
-        if(user.length > 0){
-            res.send(user[0])
-        }
-        else{
-            return res.status(400).json({message:'User Login Failed'});
-        }
+router.post("/login",async (req,res)=>{
+    const {email,password}=req.body
 
-    }catch(err){return res.status(400).json}
-})
+   try{
+    const user= await User.findOne({email:email,password:password})
+    if(user){
+        const temp={
+            name:user.name,
+            email:user.email,
+            isAdmin:user.isAdmin,
+            _id:user._id,
+        }
+        res.send(temp)
+    }
+    else{
+        return res.status(400).json({message: 'Login Failed'});
+    }
+   }catch(err){
+    return res.status(400).json({error});
+    }
+});
+
 module.exports=router 

@@ -8,6 +8,9 @@ export default function CartScreen() {
     const cartItems = cartstate.cartItems
     var subtotal=cartItems.reduce((x,item)=>x+item.price,0)
     const dispatch=useDispatch();
+    function checkout(){
+
+    }
     return (
 
 
@@ -46,7 +49,7 @@ export default function CartScreen() {
                 </div>
                 <div className="col-md-4 text-right">
                     <h2 style={{fontSize: '45px'}}>Subtotal : {subtotal}/- </h2>
-                    <button className="btn btn-danger">Check Out</button>
+                    <button className="btn btn-danger"onClick={checkout} ><a href='/address'style={{textDecoration: 'none',color:'white'}}>Check Out</a></button>
                 </div>
             </div>
         </div>
